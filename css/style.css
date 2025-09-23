@@ -1,0 +1,236 @@
+:root {
+    --clr-bg: #0d0d0d;
+    --clr-bg-alt: #181818;
+    --clr-text: #f5f5f5;
+    --clr-accent: #e50914;
+    --clr-muted: #888;
+    --font-main: "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.6;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--clr-accent);
+    color: #fff;
+    padding: 8px;
+    z-index: 1000;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* HEADER */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: var(--clr-bg-alt);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .brand img {
+    display: block;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+.main-nav a {
+    text-decoration: none;
+    color: var(--clr-text);
+}
+.main-nav a[aria-current="page"] {
+    font-weight: bold;
+    color: var(--clr-accent);
+}
+
+.user-zone {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.search-form input {
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    border: none;
+}
+.search-form button {
+    background: var(--clr-accent);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    cursor: pointer;
+}
+.profile summary {
+    cursor: pointer;
+    list-style: none;
+}
+.profile ul {
+    background: var(--clr-bg-alt);
+    padding: 0.5rem;
+    border-radius: 4px;
+    list-style: none;
+}
+
+.hero {
+    position: relative;
+    text-align: left;
+    color: #fff;
+}
+.hero img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+}
+.hero-content {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    max-width: 600px;
+}
+.hero-actions button {
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.hero-actions button:first-child {
+    background: #fff;
+    color: #000;
+}
+.hero-actions button:not(:first-child) {
+    background: rgba(109, 109, 110, 0.7);
+    color: #fff;
+}
+
+/* CARDS DES FILMS */
+
+.row {
+    padding: 2rem;
+}
+.row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row-header h2 {
+    font-size: 1.5rem;
+}
+.row-controls button {
+    background: none;
+    border: none;
+    color: var(--clr-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    list-style: none;
+}
+.card-grid img {
+    width: 100%;
+    border-radius: 6px;
+}
+.card-grid figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+.actions button {
+    margin-top: 0.3rem;
+    margin-right: 0.3rem;
+    font-size: 0.8rem;
+    background: var(--clr-accent);
+    border: none;
+    border-radius: 3px;
+    padding: 0.3rem 0.6rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* FORMULAIRE */
+
+#inscription {
+    background: var(--clr-bg-alt);
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 6px;
+}
+#inscription form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#inscription .field {
+    display: flex;
+    flex-direction: column;
+}
+#inscription input[type="email"],
+#inscription input[type="password"] {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: none;
+}
+#inscription button {
+    align-self: start;
+    background: var(--clr-accent);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: var(--clr-bg-alt);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--clr-muted);
+}
+.site-footer nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+.site-footer a {
+    color: var(--clr-text);
+    text-decoration: none;
+}

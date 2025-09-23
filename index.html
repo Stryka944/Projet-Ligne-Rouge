@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="StreamFlix — Votre plateforme de streaming" />
+    <title>StreamFlix</title>
+
+    <link rel="preload" href="img/films/inception.webp" as="image" />
+    <link rel="icon" href="img/logo.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#contenu" tabindex="0">Aller au contenu</a>
+
+<header id="top" class="site-header">
+    <div class="brand">
+        <a href="index.html" aria-label="StreamFlix — Accueil">
+            <img src="img/logo.png" alt="Logo StreamFlix" width="50" height="50" />
+        </a>
+    </div>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+            <li><a href="index.html" aria-current="page">Accueil</a></li>
+            <li><a href="#films">Films</a></li>
+            <li><a href="#series">Séries</a></li>
+            <li><a href="#ma-liste">Ma Liste</a></li>
+        </ul>
+    </nav>
+
+    <div class="user-zone">
+        <form class="search-form" role="search" aria-label="Recherche de contenus" action="#" method="get">
+            <label for="q">Rechercher</label>
+            <input id="q" name="q" type="search" placeholder="Rechercher des films, séries…" autocomplete="off" list="suggestions" aria-describedby="search-help" />
+            <datalist id="suggestions">
+                <option value="Inception"></option>
+                <option value="Interstellar"></option>
+                <option value="The Dark Knight"></option>
+                <option value="Pulp Fiction"></option>
+                <option value="The Matrix"></option>
+                <option value="Forrest Gump"></option>
+            </datalist>
+            <button type="submit" aria-label="Lancer la recherche">Rechercher</button>
+            <p id="search-help">Tapez un titre, un acteur ou un genre puis validez.</p>
+        </form>
+
+        <details class="profile" aria-label="Menu profil">
+            <summary aria-haspopup="listbox">Profil</summary>
+            <nav aria-label="Menu profil">
+                <ul>
+                    <li><a href="#profil">Mon profil</a></li>
+                    <li><a href="#parametres">Paramètres</a></li>
+                    <li><a href="#deconnexion">Se déconnecter</a></li>
+                </ul>
+            </nav>
+        </details>
+    </div>
+</header>
+
+<main id="contenu">
+    <section class="hero" aria-labelledby="hero-title">
+        <img src="img/films/inception.webp"
+             alt="Inception (2010) — Un voleur s'infiltre dans les rêves pour y implanter une idée. Genres : Science-fiction, Thriller."
+             width="1600" height="900" />
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <h1 id="hero-title">Inception</h1>
+            <p class="hero-desc">
+                Un voleur qui s'infiltre dans les rêves des autres pour voler leurs secrets découvre qu'il doit réaliser l'impossible :
+                planter une idée plutôt que de la voler.
+            </p>
+            <p class="hero-meta">
+                <time datetime="2010">2010</time> •
+                <time datetime="PT2H28M">2h28</time> •
+                <span class="genres">Sci-Fi, Thriller</span> •
+                <span class="note">
+            Note :
+            <meter min="0" max="5" value="4.5" aria-label="Note 4,5 sur 5"></meter> 4,5/5
+          </span>
+            </p>
+            <div class="hero-actions">
+                <button type="button" aria-label="Lire Inception">▶ Lecture</button>
+                <button type="button" aria-label="Plus d’informations sur Inception">Plus d'infos</button>
+                <button type="button" aria-label="Ajouter Inception à Ma Liste" data-list-action="add">+ Ma Liste</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="films" hidden aria-hidden="true"></div>
+
+    <section class="row" aria-labelledby="trend-title">
+        <header class="row-header">
+            <h2 id="trend-title">Tendances actuelles</h2>
+            <div class="row-controls" aria-label="Contrôles de navigation des tendances">
+                <button type="button" class="prev" aria-label="Voir les éléments précédents" aria-controls="trend-list" disabled>◀</button>
+                <button type="button" class="next" aria-label="Voir les éléments suivants" aria-controls="trend-list">▶</button>
+            </div>
+        </header>
+
+        <ul id="trend-list" class="card-grid" aria-label="Grille des films — Tendances actuelles">
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/darknight.webp" alt="The Dark Knight (2008) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>The Dark Knight</h3>
+                            <p class="meta">
+                                <time datetime="2008">2008</time> •
+                                <time datetime="PT2H32M">2h32</time> •
+                                Action, Crime, Drama •
+                                Note :
+                                <meter min="0" max="5" value="4.8" aria-label="Note 4,8 sur 5"></meter> 4,8/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire The Dark Knight">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur The Dark Knight">Infos</button>
+                                <button type="button" aria-label="Ajouter The Dark Knight à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/Interstellar_film_poster.jpg" alt="Interstellar (2014) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>Interstellar</h3>
+                            <p class="meta">
+                                <time datetime="2014">2014</time> •
+                                <time datetime="PT2H49M">2h49</time> •
+                                Sci-Fi, Drama •
+                                Note :
+                                <meter min="0" max="5" value="4.7" aria-label="Note 4,7 sur 5"></meter> 4,7/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire Interstellar">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur Interstellar">Infos</button>
+                                <button type="button" aria-label="Ajouter Interstellar à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/pulp_fiction.jpg" alt="Pulp Fiction (1994) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>Pulp Fiction</h3>
+                            <p class="meta">
+                                <time datetime="1994">1994</time> •
+                                <time datetime="PT2H34M">2h34</time> •
+                                Crime, Drama •
+                                Note :
+                                <meter min="0" max="5" value="4.6" aria-label="Note 4,6 sur 5"></meter> 4,6/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire Pulp Fiction">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur Pulp Fiction">Infos</button>
+                                <button type="button" aria-label="Ajouter Pulp Fiction à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+    <section class="row" aria-labelledby="reco-title">
+        <header class="row-header">
+            <h2 id="reco-title">Recommandés pour vous</h2>
+            <div class="row-controls" aria-label="Contrôles de navigation des recommandations">
+                <button type="button" class="prev" aria-label="Voir les éléments précédents" aria-controls="reco-list" disabled>◀</button>
+                <button type="button" class="next" aria-label="Voir les éléments suivants" aria-controls="reco-list">▶</button>
+            </div>
+        </header>
+
+        <ul id="reco-list" class="card-grid" aria-label="Grille des films — Recommandés pour vous">
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/inception.webp" alt="Inception (2010) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>Inception</h3>
+                            <p class="meta">
+                                <time datetime="2010">2010</time> •
+                                <time datetime="PT2H28M">2h28</time> •
+                                Sci-Fi, Thriller •
+                                Note :
+                                <meter min="0" max="5" value="4.5" aria-label="Note 4,5 sur 5"></meter> 4,5/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire Inception">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur Inception">Infos</button>
+                                <button type="button" aria-label="Ajouter Inception à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/matrix.jpeg" alt="The Matrix (1999) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>The Matrix</h3>
+                            <p class="meta">
+                                <time datetime="1999">1999</time> •
+                                <time datetime="PT2H16M">2h16</time> •
+                                Action, Sci-Fi •
+                                Note :
+                                <meter min="0" max="5" value="4.5" aria-label="Note 4,5 sur 5"></meter> 4,5/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire The Matrix">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur The Matrix">Infos</button>
+                                <button type="button" aria-label="Ajouter The Matrix à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/forrest_gump.jpg" alt="Forrest Gump (1994) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>Forrest Gump</h3>
+                            <p class="meta">
+                                <time datetime="1994">1994</time> •
+                                <time datetime="PT2H22M">2h22</time> •
+                                Drama, Romance •
+                                Note :
+                                <meter min="0" max="5" value="4.4" aria-label="Note 4,4 sur 5"></meter> 4,4/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire Forrest Gump">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur Forrest Gump">Infos</button>
+                                <button type="button" aria-label="Ajouter Forrest Gump à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+    <section class="row" aria-labelledby="new-title">
+        <header class="row-header">
+            <h2 id="new-title">Nouveautés</h2>
+            <div class="row-controls" aria-label="Contrôles de navigation des nouveautés">
+                <button type="button" class="prev" aria-label="Voir les éléments précédents" aria-controls="new-list" disabled>◀</button>
+                <button type="button" class="next" aria-label="Voir les éléments suivants" aria-controls="new-list">▶</button>
+            </div>
+        </header>
+
+        <ul id="new-list" class="card-grid" aria-label="Grille des films — Nouveautés">
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/Interstellar_film_poster.jpg" alt="Interstellar (2014) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>Interstellar</h3>
+                            <p class="meta">
+                                <time datetime="2014">2014</time> •
+                                <time datetime="PT2H49M">2h49</time> •
+                                Sci-Fi, Drama •
+                                Note :
+                                <meter min="0" max="5" value="4.7" aria-label="Note 4,7 sur 5"></meter> 4,7/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire Interstellar">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur Interstellar">Infos</button>
+                                <button type="button" aria-label="Ajouter Interstellar à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/darknight.webp" alt="The Dark Knight (2008) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>The Dark Knight</h3>
+                            <p class="meta">
+                                <time datetime="2008">2008</time> •
+                                <time datetime="PT2H32M">2h32</time> •
+                                Action, Crime, Drama •
+                                Note :
+                                <meter min="0" max="5" value="4.8" aria-label="Note 4,8 sur 5"></meter> 4,8/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire The Dark Knight">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur The Dark Knight">Infos</button>
+                                <button type="button" aria-label="Ajouter The Dark Knight à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+
+            <li>
+                <article>
+                    <figure>
+                        <img src="img/films/inception.webp" alt="Inception (2010) — Affiche" width="300" height="320" />
+                        <figcaption>
+                            <h3>Inception</h3>
+                            <p class="meta">
+                                <time datetime="2010">2010</time> •
+                                <time datetime="PT2H28M">2h28</time> •
+                                Sci-Fi, Thriller •
+                                Note :
+                                <meter min="0" max="5" value="4.5" aria-label="Note 4,5 sur 5"></meter> 4,5/5
+                            </p>
+                            <div class="actions">
+                                <button type="button" aria-label="Lire Inception">▶ Lire</button>
+                                <button type="button" aria-label="Plus d’informations sur Inception">Infos</button>
+                                <button type="button" aria-label="Ajouter Inception à Ma Liste" data-list-action="add">+ Ma Liste</button>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+    <section id="series" aria-labelledby="series-title">
+        <h2 id="series-title">Séries</h2>
+        <p>Le catalogue séries arrive bientôt.</p>
+    </section>
+
+    <section id="ma-liste" aria-labelledby="list-title">
+        <h2 id="list-title">Ma Liste</h2>
+        <p>Ajoutez des titres depuis les cartes films pour les retrouver ici.</p>
+    </section>
+
+    <section id="inscription" aria-labelledby="signup-title">
+        <h2 id="signup-title">Inscription</h2>
+        <form action="#" method="post" aria-describedby="signup-help">
+            <p id="signup-help">Créez votre compte StreamFlix pour profiter de tout le catalogue.</p>
+
+            <fieldset>
+                <legend>Informations de connexion</legend>
+
+                <div class="field">
+                    <label for="email">Adresse e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="vous@exemple.com" autocomplete="email" required />
+                </div>
+
+                <div class="field">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" minlength="8" required aria-describedby="pwd-tip" />
+                    <small id="pwd-tip">8 caractères minimum, avec lettres et chiffres.</small>
+                </div>
+
+                <div class="field">
+                    <label for="password2">Confirmer le mot de passe</label>
+                    <input type="password" id="password2" name="password2" minlength="8" required />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Choix de l’abonnement</legend>
+                <div class="field">
+                    <input type="radio" id="plan-basic" name="plan" value="basic" required />
+                    <label for="plan-basic">Basic</label>
+                </div>
+                <div class="field">
+                    <input type="radio" id="plan-standard" name="plan" value="standard" />
+                    <label for="plan-standard">Standard</label>
+                </div>
+                <div class="field">
+                    <input type="radio" id="plan-premium" name="plan" value="premium" />
+                    <label for="plan-premium">Premium</label>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <input type="checkbox" id="newsletter" name="newsletter" />
+                <label for="newsletter">Recevoir la newsletter</label>
+            </div>
+
+            <div class="field">
+                <input type="checkbox" id="cgu" name="cgu" required />
+                <label for="cgu">J’accepte les Conditions d’utilisation</label>
+            </div>
+
+            <button type="submit">Créer mon compte</button>
+        </form>
+    </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <nav aria-label="Liens utiles">
+        <ul>
+            <li><a href="#aide">Aide</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#mentions-legales">Mentions légales</a></li>
+            <li><a href="#cgu">Conditions d’utilisation</a></li>
+        </ul>
+    </nav>
+
+    <nav aria-label="Réseaux sociaux">
+        <ul>
+            <li><a href="#twitter" aria-label="Twitter (lien factice)">Twitter</a></li>
+            <li><a href="#instagram" aria-label="Instagram (lien factice)">Instagram</a></li>
+            <li><a href="#facebook" aria-label="Facebook (lien factice)">Facebook</a></li>
+        </ul>
+    </nav>
+
+    <p>© <time datetime="2025">2025</time> StreamFlix. Tous droits réservés.</p>
+</footer>
+</body>
+</html>
